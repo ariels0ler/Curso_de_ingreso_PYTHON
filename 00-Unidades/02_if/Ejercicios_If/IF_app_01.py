@@ -5,14 +5,15 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Ariel
+apellido: Soler
 ---
 Ejercicio: if_01
 ---
 Enunciado:
 Al presionar el botón 'Mostrar', se deberá obtener el contenido de la caja de texto txt_edad,
-transformarlo en número, si coincide con el valor 18, mostrar el mensaje “Usted tiene 18 años” utilizando el Dialog Alert.
+transformarlo en número,
+ si coincide con el valor 18, mostrar el mensaje “Usted tiene 18 años” utilizando el Dialog Alert.
 '''
 
 class App(customtkinter.CTk):
@@ -33,9 +34,32 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
 
-         
+#Mejor solución con "esle". Se evitan procesos inncesarios. EN REALIDAD NO APLICA ACÁ, SINO EN EL EJERCICIO 3. Pero ya lo hice.
+
+        """"edad = int(self.txt_edad.get())
+        if edad > 17:
+            alert("Mensaje", f"Usted tiene {edad} años de edad")
+            alert("Mensaje", "Gracias por brindarme tus datos, ahora puedeo venderte más y mejor")
+            alert("Mensaje", "Fin del programa")
+        else: alert("Mensaje","Este programa es exlusivo para diesiochoañeros, adios")"""
+
+
+#Ejemplo del true/false en consola
+        """edad = int(self.txt_edad.get()) #Ejemplo del true/false en consola
+        print(edad == 18)"""
+
+#Ejemplo sin usar el condicional "else"
+        if edad > 17:
+            alert("Mensaje", f"Usted tiene {edad} años de edad")
+            alert("Mensaje", "Gracias por brindarme tus datos, ahora puedeo venderte más y mejor")
+            alert("Mensaje", "Fin del programa")
+        if edad < 18:
+            alert("Mensaje","Este programa es exlusivo para diesiochoañeros, adios")
+
+
+        
+        
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

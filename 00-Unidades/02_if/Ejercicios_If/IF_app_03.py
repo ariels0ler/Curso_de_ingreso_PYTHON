@@ -13,7 +13,8 @@ Ejercicio: if_03
 Enunciado:
 Al presionar el botón 'Calcular',
  se deberá obtener el contenido de la caja de texto txtEdad, 
- transformarlo en número y calcular si es o no mayor de edad. Si es mayor de 18 se mostrará el mensaje “MAYOR” caso contrario “MENOR” en ambos casos utilizando el Dialog Alert.
+ transformarlo en número y calcular si es o no mayor de edad. Si es mayor de 18 se mostrará el mensaje “MAYOR”
+ caso contrario “MENOR” en ambos casos utilizando el Dialog Alert.
 '''
 
 class App(customtkinter.CTk):
@@ -34,9 +35,23 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        edad = int(self.txt_edad.get())
+#Solución sin else, conlleva procesos innecesarios
+        """if edad > 17:
+            alert("Mensaje","Usted es mayor de edad,puede dársela en la pera")
+        if edad < 18:
+            alert("Mensaje","Usted es menor,¿qué hace acá? A tomar la choco")
 
+        alert("Mensaje","Fin del mensaje")"""
+
+        if edad > 17:
+            alert("Mensaje","Usted es mayor de edad,puede dársela en la pera")
+        else:
+            alert("Mensaje","Usted es menor,¿qué hace acá? A tomar la choco")
         
+        alert("Mensaje","Fin del mensaje")
+
+
         
     
 if __name__ == "__main__":

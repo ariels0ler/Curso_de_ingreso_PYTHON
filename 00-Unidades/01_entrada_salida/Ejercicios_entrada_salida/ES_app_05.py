@@ -44,9 +44,13 @@ class App(customtkinter.CTk):
         nombre = self.txt_nombre.get()
         edad = self.txt_edad.get()
 
-        mensaje = f"Usteded se llama {nombre} y tiene {edad}"
+        mensaje = "Usteded se llama {0} y tiene {1}".format(nombre,edad)
         
-        alert("E/05", mensaje)
+        #alert("E/05", mensaje)
+
+
+        #alert("E/05", f"Usted se llama {nombre} y tiene {edad} años de edad")
+        
 
         
     
