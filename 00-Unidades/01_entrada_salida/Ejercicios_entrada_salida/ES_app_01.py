@@ -22,12 +22,24 @@ class App(customtkinter.CTk):
 
         self.title("UTN FRA")
 
-        self.btn_mostrar = customtkinter.CTkButton(
-            master=self, text="Mostrar", command=self.btn_mostrar_on_click)
+        self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
+        #alert("E,S_01", "Esto no anda, funciona")
     def btn_mostrar_on_click(self):
-        alert("E,S_01", "Esto no anda, funciona")
+        dolar_oficial = float(prompt("oficial","cantidad"))
+        dolar_blue = float(prompt("blue","cantidad"))
+
+        resta = dolar_oficial - dolar_blue
+        porcentaje = resta / -(dolar_oficial)
+
+        porcentaje_multiplicado = porcentaje * 100
+        porcenta_redondeado = round(porcentaje_multiplicado)     
+        
+        alert("La diferencia es",f"La diferencia es de {porcenta_redondeado}%")
+        
+        
+        
 
 
 if __name__ == "__main__":

@@ -37,8 +37,8 @@ class App(customtkinter.CTk):
 
 #Mejor solución con "esle". Se evitan procesos inncesarios. EN REALIDAD NO APLICA ACÁ, SINO EN EL EJERCICIO 3. Pero ya lo hice.
 
-        """"edad = int(self.txt_edad.get())
-        if edad > 17:
+        edad = int(self.txt_edad.get())
+        """if edad > 17:
             alert("Mensaje", f"Usted tiene {edad} años de edad")
             alert("Mensaje", "Gracias por brindarme tus datos, ahora puedeo venderte más y mejor")
             alert("Mensaje", "Fin del programa")
@@ -50,6 +50,7 @@ class App(customtkinter.CTk):
         print(edad == 18)"""
 
 #Ejemplo sin usar el condicional "else"
+#En este ejemplo se usan demasiadas alerts, hay que crear una variable con el mensaje
         if edad > 17:
             alert("Mensaje", f"Usted tiene {edad} años de edad")
             alert("Mensaje", "Gracias por brindarme tus datos, ahora puedeo venderte más y mejor")
