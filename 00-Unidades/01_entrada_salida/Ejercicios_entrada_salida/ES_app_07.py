@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Ariel
+apellido: Soler
 ---
 Ejercicio: entrada_salida_07
 ---
@@ -77,7 +77,7 @@ class App(customtkinter.CTk):
         multi_uno_num = int(multi_uno)
         multi_dos_num = int(multi_dos)
 
-        resultado = multi_uno_num + multi_dos_num
+        resultado = multi_uno_num * multi_dos_num
 
 
         alert("El resultado es", resultado)
@@ -92,7 +92,7 @@ class App(customtkinter.CTk):
         divi_uno_num = int(divi_uno)
         divi_dos_num = int(divi_dos)
 
-        resultado = divi_uno_num + divi_dos_num 
+        resultado = round(divi_uno_num / divi_dos_num) 
 
         alert("El resultado es", resultado)
         
