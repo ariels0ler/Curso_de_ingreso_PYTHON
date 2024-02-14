@@ -35,9 +35,19 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
 
+#Ejercicio bien hecho, tal y como lo pide la consigna.
+        edad = int(self.txt_edad.get())
+
+        if edad == 18:
+            mensaje = "Usted tiene 18 años"
+            alert("IF_1", mensaje)
+        
+        alert("IF_1", "Fin del programa")
+
+
 #Mejor solución con "esle". Se evitan procesos inncesarios. EN REALIDAD NO APLICA ACÁ, SINO EN EL EJERCICIO 3. Pero ya lo hice.
 
-        edad = int(self.txt_edad.get())
+        #edad = int(self.txt_edad.get())
         """if edad > 17:
             alert("Mensaje", f"Usted tiene {edad} años de edad")
             alert("Mensaje", "Gracias por brindarme tus datos, ahora puedeo venderte más y mejor")
@@ -45,21 +55,21 @@ class App(customtkinter.CTk):
         else: alert("Mensaje","Este programa es exlusivo para diesiochoañeros, adios")"""
 
 
-#Ejemplo del true/false en consola
-        """edad = int(self.txt_edad.get()) #Ejemplo del true/false en consola
-        print(edad == 18)"""
 
 #Ejemplo sin usar el condicional "else"
 #En este ejemplo se usan demasiadas alerts, hay que crear una variable con el mensaje
-        if edad > 17:
+        """if edad > 17:
             alert("Mensaje", f"Usted tiene {edad} años de edad")
             alert("Mensaje", "Gracias por brindarme tus datos, ahora puedeo venderte más y mejor")
             alert("Mensaje", "Fin del programa")
-        if edad < 18:
-            alert("Mensaje","Este programa es exlusivo para diesiochoañeros, adios")
+        if edad == 18:
+            alert("Mensaje","Este programa es exlusivo para diesiochoañeros, adios")"""
 
 
-        
+        #Ejemplo del true/false en consola
+        """edad = int(self.txt_edad.get()) #Ejemplo del true/false en consola
+        print(edad == 18)"""
+
         
 if __name__ == "__main__":
     app = App()

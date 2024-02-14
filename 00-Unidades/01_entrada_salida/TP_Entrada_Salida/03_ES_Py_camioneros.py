@@ -3,10 +3,10 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
-
+import math
 '''
-nombre:
-apellido:
+nombre: Ariel
+apellido: Soler
 ---
 TP: ES_Camioneros
 ---
@@ -14,9 +14,14 @@ Enunciado:
 
 3.	Para el departamento de logística:
 
-	A.	Es necesario saber la cantidad camiones que harian falta para transportar los materiales que se utilizarán para la construcción de un edificio. Para ello, se ingresa la cantidad de toneladas necesarias de materiales a transportar. El programa deberá informar la cantidad de camiones, sabiendo que cada uno de ellos puede transportar por viaje 3500kg
+	A.	Es necesario saber la cantidad camiones que harian falta para transportar los materiales que se utilizarán
+    para la construcción de un edificio. Para ello, se ingresa la cantidad de toneladas necesarias de materiales a
+    transportar. El programa deberá informar la cantidad de camiones, sabiendo que cada uno de ellos puede transportar 
+    por viaje 3500kg
 
-    B.	A partir del ingreso de la cantidad de kilómetros que tiene que recorrer estos camiones para llegar al destino de la obra, necesitamos que el programa informe cual es el tiempo (en horas) que tardará cada uno de los camiones, si sabemos que cada camión puede ir a una velocidad máxima y constante de 90 km/h  
+    B.	A partir del ingreso de la cantidad de kilómetros que tiene que recorrer estos camiones para llegar al destino
+    de la obra, necesitamos que el programa informe cual es el tiempo (en horas) que tardará cada uno de los camiones, 
+    si sabemos que cada camión puede ir a una velocidad máxima y constante de 90 km/h  
 
 '''
 
@@ -38,7 +43,7 @@ class App(customtkinter.CTk):
         
         self.txt_kilometros = customtkinter.CTkEntry(master=self)
         self.txt_kilometros.grid(row=1, column=1)
-       
+
         self.btn_cantidad_camiones = customtkinter.CTkButton(master=self, text="Calcular cantidad de camiones", command=self.btn_cantidad_camiones_on_click)
         self.btn_cantidad_camiones.grid(row=3, pady=10, padx=30 ,columnspan=2, sticky="nsew")
         
@@ -46,9 +51,28 @@ class App(customtkinter.CTk):
         self.btn_tiempo_llegada.grid(row=4, pady=10, padx=30, columnspan=2, sticky="nsew")
     
     def btn_cantidad_camiones_on_click(self):
+
+        toneladas = float(self.txt_toneladas.get())
+
+        camiones_necesarios = math.ceil(toneladas / 3.5)
+
+        mensaje = f"Se necesitará {camiones_necesarios} camiones"
+
+        alert("TP_3", mensaje)
+
         pass
 
     def btn_tiempo_llegada_on_click(self):
+
+        kilometros = float(self.txt_kilometros.get())
+
+        tiempo_de_llegada = math.ceil(kilometros / 90)
+
+        mensaje = f"El tiempo de llegada será de {tiempo_de_llegada} hr/hrs"
+        
+        alert("TP_3", mensaje)
+
+
         pass
     
     
