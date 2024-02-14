@@ -43,6 +43,16 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
+
+        cantidad = self.combobox_cantidad.get()
+        marca = self.combobox_marca.get()
+
+
+        if cantidad > 5:
+            descuento = 0.5
+        elif marca == "ArgentinaLuz"
+        else:
+            descuento = 0
         pass
         
     

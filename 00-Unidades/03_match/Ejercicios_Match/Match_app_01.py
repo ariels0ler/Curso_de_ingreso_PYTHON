@@ -43,6 +43,14 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
+        
+        meses = self.combobox_mes.get()
+
+        
+
+
+        
+
         pass
     
     
