@@ -46,11 +46,18 @@ class App(customtkinter.CTk):
 
         cantidad = self.combobox_cantidad.get()
         marca = self.combobox_marca.get()
+        precio_lampara = 800
 
 
         if cantidad > 5:
-            descuento = 0.5
-        elif marca == "ArgentinaLuz"
+            descuento = 0.50
+        elif marca == 5:
+            if marca == "ArgentinaLuz":
+                descuento = 0.40
+            else:
+                descuento = 0.30
+            
+
         else:
             descuento = 0
         pass
