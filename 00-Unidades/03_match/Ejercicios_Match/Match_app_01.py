@@ -46,6 +46,16 @@ class App(customtkinter.CTk):
         
         meses = self.combobox_mes.get()
 
+        match meses:
+            case 1:
+                meses == "Enero"
+                mensaje = "¡Que comiences bien el año!"
+            case 2:
+                meses == "Marzo"
+                mensaje =  "A clases!!"
+            case 3:
+                
+
         
 
 
