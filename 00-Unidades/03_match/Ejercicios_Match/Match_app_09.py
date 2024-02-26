@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Ariel
+apellido: Soler
 ---
 Ejercicio: Match_09
 ---
@@ -57,8 +57,65 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        
+        destino = self.combobox_destino.get()
+        estaciones = self.combobox_estaciones.get()
+
+        precio_estandar = 15000
+        
+
+        match estaciones:
+            case "Invierno":
+                match destino:
+                    case "Bariloche":
+                        precio_final = precio_estandar + (precio_estandar * 0.20)
+                    case "Mar del plata":
+                        precio_final = precio_estandar - (precio_estandar * 0.20)
+                    case "Cordoba" | "Cataratas":
+                        precio_final = precio_estandar - (precio_estandar * 0.10)
+
+
+                
             
+            case "Verano":
+                match destino:
+                    case "Bariloche":
+                        precio_final = precio_estandar - (precio_estandar * 0.20)
+                    case "Mar del plata":
+                        precio_final = precio_estandar + (precio_estandar * 0.20)
+                    case "Cordoba" | "Cataratas":
+                        precio_final =  precio_estandar + (precio_estandar * 0.10)
+
+            case "Primavera":
+                match destino:
+                    case "Bariloche":
+                        precio_final =  precio_estandar + (precio_estandar * 0.10)
+                    case "Mar del plata":
+                        precio_final =  precio_estandar + (precio_estandar * 0.10)
+                    case "Cordoba" | "Cataratas":
+                        precio_final =  precio_estandar + (precio_estandar * 0.10)
+
+            case "Otoño":
+                match destino:
+                    case "Bariloche":
+                        precio_final =  precio_estandar + (precio_estandar * 0.10)
+                    case "Mar del plata":
+                        precio_final =  precio_estandar + (precio_estandar * 0.10)
+                    case "Cordoba" | "Cataratas":
+                        precio_final =  precio_estandar + (precio_estandar * 0.10)
+            
+            case _:
+                precio_final = precio_estandar
+
+        mensaje = f"Este {estaciones} la tarifa por su estadía en {destino} es de {precio_final}"
+
+        alert("Match",mensaje)
+            
+
+            
+
+
+        
     
 if __name__ == "__main__":
     app = App()

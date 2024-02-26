@@ -74,7 +74,8 @@ class App(customtkinter.CTk):
             #     contador_IOT += 1
             # else:
             #     contador_RV_RA += 1
-            
+            seguir = question("Seguir","¿Desea continuar?")
+
             match tecnologia:
                 case "IA":
                     contador_IA += 1
@@ -113,7 +114,6 @@ class App(customtkinter.CTk):
         
         
         
-        seguir = question("Seguir","¿Desea continuar?")
 
         
         print(nombre,edad,genero,tecnologia,contador_masculino_IOT_IA)
