@@ -34,8 +34,9 @@ class App(customtkinter.CTk):
         numero = prompt("X","Ingrese un número")
         numero = int(numero)
 
-        while numero < 0 or numero > 10:
-            
+        while numero < 0 or numero > 9:
+            numero = prompt("X","Ingrese un número")
+            numero = int(numero)
 
         pass
     

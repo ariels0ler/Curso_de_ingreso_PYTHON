@@ -41,7 +41,7 @@ class App(customtkinter.CTk):
 
         while True:
             numero = prompt("EJ_07", "Ingrese un numero")
-            if numero == None:
+            if numero == None or numero == "":
                 break
 
             numero = int(numero)
@@ -50,10 +50,13 @@ class App(customtkinter.CTk):
             contador += 1
 
             promedio = acumulador / contador
+            promedio = round(promedio,1)
 
         self.txt_suma_acumulada.delete(0,"end")
         self.txt_suma_acumulada.insert(0,acumulador)
 
+        self.txt_promedio.delete(0,"end")
+        self.txt_promedio.insert(0,promedio)
 
     
 if __name__ == "__main__":

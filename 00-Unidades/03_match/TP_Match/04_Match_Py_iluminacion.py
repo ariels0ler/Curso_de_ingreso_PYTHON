@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Ariel
+apellido: Soler
 ---
 TP: Iluminación
 ---
@@ -43,8 +43,58 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
         
+        precio = 800
+        marca = self.combobox_marca.get()
+        cantidad = self.combobox_cantidad.get()
+        cantidad = int(cantidad)
+        
+
+        match cantidad:
+            case  10 | 11 | 12:
+                precio_cantidad = precio * cantidad
+                precio_sin_descuento =  precio_cantidad - (precio_cantidad * 0.50)
+                precio_final =  precio_sin_descuento - (precio_sin_descuento * 0.05)
+            case 6 | 7 | 8 | 9:
+                precio_cantidad = precio * cantidad
+                precio_final = (precio * cantidad) - (precio * 0.50)
+            case 5:
+                match marca:
+                    case "ArgentinaLuz":
+                        precio_cantidad = precio * cantidad
+                        precio_final = precio_cantidad - (precio_cantidad * 0.40)
+                    case _:
+                        precio_cantidad = precio * cantidad
+                        precio_final = precio_cantidad - (precio_cantidad * 0.30)
+            case 4:
+                match marca:
+                    case "ArgentinaLuz" | "FelipeLamparas":
+                        precio_cantidad = precio * cantidad
+                        precio_final = precio_cantidad - (precio_cantidad * 0.25)
+                    case _:
+                        precio_cantidad = precio * cantidad
+                        precio_final = precio_cantidad - (precio_cantidad * 0.20)
+            case 3:
+                match marca:
+                    case "ArgentinaLuz":
+                        precio_cantidad = precio * cantidad
+                        precio_final = precio_cantidad - (precio_cantidad * 0.15)
+                    case "FelipeLamparas":
+                        precio_cantidad = precio * cantidad
+                        precio_final = precio_cantidad - (precio_cantidad * 0.10)
+                    case _:
+                        precio_cantidad = precio * cantidad
+                        precio_final = precio_cantidad - (precio_cantidad * 0.5)
+            case _:
+                precio_final = precio * cantidad
+        
+        
+        
+        # precio_final = precio * cantidad
+        # precio_final_descuento = precio_final - (precio_final * descuento)
+        print(precio_final)
+
+
     
 if __name__ == "__main__":
     app = App()

@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Ariel
+apellido: Soler
 ---
 Ejercicio: while_02bis
 ---
@@ -32,6 +32,7 @@ class App(customtkinter.CTk):
 
         contador = 0
         acumulador_suma = 0
+        
         while contador < 11:
             if contador % 2 == 0 :
                 acumulador_suma = acumulador_suma + contador

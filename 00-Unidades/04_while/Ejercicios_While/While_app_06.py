@@ -46,7 +46,7 @@ class App(customtkinter.CTk):
 
             contador += 1
 
-        promedio_acumulado = suma_acumulada / 5 
+        promedio_acumulado = suma_acumulada / contador
 
         self.txt_suma_acumulada.delete(0, "end")
         self.txt_suma_acumulada.insert(0, suma_acumulada)

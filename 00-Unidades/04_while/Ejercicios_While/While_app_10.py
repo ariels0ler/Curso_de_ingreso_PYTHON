@@ -41,7 +41,104 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        acumulador_positivos = 0
+        
+        #Fuera del while
+        #Declaramos acumuladore y contadores
+
+        numero_maximo = 0
+        numero_minimo = 0
+
+        acumulador_positivos = 0 
+        acumulador_negativos = 0
+
+        contador_positivos = 0
+        contador_negativos = 0 
+        contador_ceros = 0
+
+        flag = True
+        
+        #Bucle principal
+        while True:
+            
+            numero = prompt("Mensaje","Ingrese un número")
+
+            #Condición que rompe el bucle
+            if numero == None or numero == "":
+                break
+            else:
+                
+                numero = int(numero)
+                #Calcula el máximo
+                if numero > numero_maximo or flag == True:
+                        numero_maximo = numero
+                #B. La suma acumulada de los positivos
+                        if numero > 0:
+                            acumulador_positivos += numero
+                            #C. Cantidad de números positivos ingresados
+                            contador_positivos += 1
+                        
+
+                if numero < numero_minimo or flag == True:
+                        numero_minimo = numero
+                        
+                        #A. La suma acumulada de los negativos
+                        if numero < 0:
+                            acumulador_negativos += numero 
+                            # D. Cantidad de números negativos ingresados
+                            contador_negativos += 1
+
+                # E. Cantidad de ceros 
+                if numero == 0:
+                    contador_ceros += 1
+                flag = False
+        #Fuera del While
+        
+        # J. Cantidad de numeros ingresados
+        
+        total_numeros_ingresados = contador_ceros + contador_negativos + contador_positivos
+        
+        # I. Promedio de los positivos y Promedio de los negativos
+        if contador_positivos != 0:
+            promedio_positivos = acumulador_positivos / contador_positivos
+        else:
+            promedio_positivos = "No se ingresaron números positivos"
+        if contador_negativos != 0:
+            promedio_negativos = acumulador_negativos / contador_negativos
+        else:
+            promedio_negativos = "No se ingresaron números negativos"
+        
+        #F. Diferencia entre la cantidad de los números positivos ingresados y los negativos
+        diferencia_positivos_negativos = acumulador_positivos - acumulador_negativos
+
+        print(diferencia_positivos_negativos)
+
+        
+
+
+            
+
+"""
+if numero > 0:
+    
+"""
+
+
+            
+
+
+        
+
+        
+        
+
+
+    
+if __name__ == "__main__":
+    app = App()
+    app.geometry("300x300")
+    app.mainloop()
+
+"""acumulador_positivos = 0
         acumulador_negativos = 0
         
         contador_positivos = 0
@@ -93,17 +190,7 @@ class App(customtkinter.CTk):
             #     contador_ceros += 1
         
         #diferencia = acumulador_positivos + acumulador_negativos
-        diferencia = contador_positivos - contador_negativos
+        # diferencia = contador_positivos - contador_negativos
         
-        mensaje = f"Resultado \n la suma acumulada es de los negativos es: {acumulador_negativos} \n la suma acumulada es de los positivos es: {acumulador_positivos} \n la diferencia: {diferencia} \n cantidad positivos: {contador_positivos} \n cantidad negativos: {contador_negativos} \n cantidad ceros: {contador_ceros}"
-        alert("EJ 10", mensaje) 
-
-            
-            #Máximos y mínimos no se inicializan.
-
-
-    
-if __name__ == "__main__":
-    app = App()
-    app.geometry("300x300")
-    app.mainloop()
+        # mensaje = f"Resultado \n la suma acumulada de los negativos es: {acumulador_negativos} \n la suma acumulada es de los positivos es: {acumulador_positivos} \n la diferencia: {diferencia} \n cantidad positivos: {contador_positivos} \n cantidad negativos: {contador_negativos} \n cantidad ceros: {contador_ceros}"
+        # alert("EJ 10", mensaje) """
