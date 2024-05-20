@@ -30,8 +30,10 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
         
+        lista = self.lista_datos
+
+
         
     
 if __name__ == "__main__":

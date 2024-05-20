@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Ariel
+apellido: Soler
 ---
 Ejercicio: for_05
 ---
@@ -27,7 +27,18 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        
+        acumulador_pares = 0
+
+        numero = input("Ingrese un número")
+        numero = int(numero)
+
+        for i in range(1,numero):
+            if i % 2 == 0:
+                print(i)
+                acumulador_pares += 1 
+        print(f"El total de números pares acumulados es {acumulador_pares}")
+        
             
         
     

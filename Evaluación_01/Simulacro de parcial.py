@@ -173,7 +173,7 @@ class App(customtkinter.CTk):
         else:
             participante_mas_votado = "Esteban"
         
-#Me está fallando la parte del votante más joven
+#Me está fallando la parte del votante más jove
         print(f"1= El votante más viejo es {nombre_votante_mas_viejo}")
         print(f"2= El votante joven que votó por Gianni es {nombre_votante_gianni}")
         print(f"3= Promedio de votos femeninos: {promedio_votantes_femenino}")
